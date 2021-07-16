@@ -124,6 +124,8 @@ class ABI2py:
                 name = func_name + "_OUTPUT_" + str(name_counter)
                 name_list.append(name)
                 name_counter += 1
+            else:
+                name_list.append(name)
         # if outputs is one item then it will only return a single output, not a list, there needs to be logic to handle that output, -- turn it into a list, instead of one single item
         if len(outputs) == 1:
             body = body + "\n"
@@ -228,14 +230,3 @@ class ABI2py:
 if __name__ == "__main__":
     file = "DMM_POOL_ABI.json"
     abi = ABI2py(file)
-    """
-    abi._load_abi()
-    txt = ""
-    txt = txt + abi.parse_class_header() + "\n"
-    for item in abi.abi:
-        if item["type"] == "function":
-            inp, outp = abi.function_to_pyfunc(item)
-            txt = txt + "\n" + inp + "\n" + outp
-    with open("abi_test.py", "w+") as f:
-        f.write(txt)
-    """

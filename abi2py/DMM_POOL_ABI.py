@@ -136,6 +136,10 @@ class DMM_POOL_ABI:
         """
         output = self.contract.functions.burn(to, ).call()
         output_dict={}
+        self.amount0 = output[0]
+        output_dict["amount0"] = output[0]
+        self.amount1 = output[1]
+        output_dict["amount1"] = output[1]
         return output_dict
 
 
@@ -232,6 +236,10 @@ class DMM_POOL_ABI:
         """
         output = self.contract.functions.getReserves().call()
         output_dict={}
+        self._reserve0 = output[0]
+        output_dict["_reserve0"] = output[0]
+        self._reserve1 = output[1]
+        output_dict["_reserve1"] = output[1]
         return output_dict
 
 
@@ -251,6 +259,16 @@ class DMM_POOL_ABI:
         """
         output = self.contract.functions.getTradeInfo().call()
         output_dict={}
+        self._reserve0 = output[0]
+        output_dict["_reserve0"] = output[0]
+        self._reserve1 = output[1]
+        output_dict["_reserve1"] = output[1]
+        self._vReserve0 = output[2]
+        output_dict["_vReserve0"] = output[2]
+        self._vReserve1 = output[3]
+        output_dict["_vReserve1"] = output[3]
+        self.feeInPrecision = output[4]
+        output_dict["feeInPrecision"] = output[4]
         return output_dict
 
 
@@ -269,6 +287,14 @@ class DMM_POOL_ABI:
         """
         output = self.contract.functions.getVolumeTrendData().call()
         output_dict={}
+        self._shortEMA = output[0]
+        output_dict["_shortEMA"] = output[0]
+        self._longEMA = output[1]
+        output_dict["_longEMA"] = output[1]
+        self._currentBlockVolume = output[2]
+        output_dict["_currentBlockVolume"] = output[2]
+        self._lastTradeBlock = output[3]
+        output_dict["_lastTradeBlock"] = output[3]
         return output_dict
 
 
@@ -342,6 +368,8 @@ class DMM_POOL_ABI:
         output_list.append(output)
         output=output_list
         output_dict={}
+        self.liquidity = output[0]
+        output_dict["liquidity"] = output[0]
         return output_dict
 
 
