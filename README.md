@@ -5,6 +5,7 @@
  - Would be nice for output py file to be async
  - Automatic formatting (black?) would be cool
  - Add functionality to suppress dictionary output if user doesn't care to receive it
+ - Is it common (or possible) for function outputs to have same names across funcs in ABI? Could cause issues and would need to tweak self.output data returned at func call.
 
 ## Notes
  - When there is no name for an output, gives name as funcname_OUTPUT_counter
