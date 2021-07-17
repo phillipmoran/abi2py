@@ -448,10 +448,10 @@ class UNISWAPV2PAIR:
         return output_items
 
 
-    def transferFrom(self, from, to, value):
+    def transferFrom(self, from_, to, value):
         """
         Args:
-            from (address)
+            from_ (address)
             to (address)
             value (uint256)
 
@@ -459,7 +459,7 @@ class UNISWAPV2PAIR:
             transferFrom_OUTPUT_0 (bool)
 
         """
-        output = self.contract.functions.transferFrom(from, to, value, ).call()
+        output = self.contract.functions.transferFrom(from_, to, value, ).call()
         output_items={}
         self.transferFrom_OUTPUT_0 = output
         output_items = output

@@ -1,4 +1,7 @@
 import json
+from keyword import (
+    kwlist,
+)  # use this to check if a variable name is a keyword, if it is then add "_"
 
 
 class ABI2py:
@@ -51,6 +54,8 @@ class ABI2py:
             class_name = self.abi_path.split("/")[-1].split(".")[0]
         else:
             class_name = self.class_name
+        if class_name in kwlist:  # check if name is keyword, add "_" if true
+            class_name = class_name + "_"
         head = (
             "class "
             + class_name
@@ -78,6 +83,8 @@ class ABI2py:
         inputs = abi_item["inputs"]
         outputs = abi_item["outputs"]
         func_name = abi_item["name"]
+        if func_name in kwlist:  # check if name is keyword, add "_" if true
+            func_name = func_name + "_"
         if func_name == "":  # catch if a function does not have a name
             func_name = "NONAME_" + str(self.func_noname_counter)
             self.func_noname_counter += 1
@@ -107,6 +114,8 @@ class ABI2py:
         return txt
 
     def _parse_output(self, func_name, input_for_output, outputs):
+        if func_name in kwlist:  # check if name is keyword, add "_" if true
+            func_name = func_name + "_"
         body = (
             self.indent * 2
             + "output = self.contract.functions."
@@ -120,6 +129,8 @@ class ABI2py:
         name_list = []  # store for later
         for output in outputs:
             name = output["name"]
+            if name in kwlist:  # check if name is keyword, add "_" if true
+                name = name + "_"
             if name == "":
                 name = func_name + "_OUTPUT_" + str(name_counter)
                 name_list.append(name)
@@ -205,6 +216,8 @@ class ABI2py:
                 if name == "":
                     name = "INPUT_" + str(name_counter)
                     name_counter += 1
+                if name in kwlist:  # check if name is keyword, add "_" if true
+                    name = name + "_"
                 input_for_output = input_for_output + name + ", "
                 input_line = input_line + ", " + name
             input_line = input_line + "):"
@@ -222,6 +235,8 @@ class ABI2py:
                 if name == "":
                     name = "INPUT_" + str(name_counter)
                     name_counter += 1
+                if name in kwlist:  # check if name is keyword, add "_" if true
+                    name = name + "_"
                 input_type = input["type"]
                 txt = txt + self.indent * 3 + name + " (" + input_type + ")\n"
         return txt
@@ -238,6 +253,8 @@ class ABI2py:
                 if name == "":
                     name = func_name + "_OUTPUT_" + str(name_counter)
                     name_counter += 1
+                if name in kwlist:  # check if name is keyword, add "_" if true
+                    name = name + "_"
                 output_type = output["type"]
                 txt = txt + self.indent * 3 + name + " (" + output_type + ")\n"
         return txt
