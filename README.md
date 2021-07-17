@@ -10,25 +10,15 @@
 ## Notes
  - When there is no name for an output, gives name as funcname_OUTPUT_counter
  - Does something similar for inputs with no name
- - Outputs are returned both to a self attribute of the class instance and as a separate dictionary
+ - Outputs are returned both to a self attribute of the class instance and as a separate dictionary (if there is more than one output) or simply returning the output (if only one output)
 
 ## How to
  Give web3 api provider, and contract address
 
-```python
-from abi2py import ABI2py
-
-file = "DMM_POOL_ABI.json"
-ABI2py(file)
-```
-
-
-## Example
- Give web3 api provider, and contract address
 
 ```python
 from web3 import Web3
-from DMM_POOL_ABI import DMM_POOL_ABI # This is the output from running ABI2py(file)
+from abi_output.DMM_POOL_ABI import DMM_POOL_ABI
 ```
 
 
@@ -47,7 +37,7 @@ contract.totalSupply()
 
 
 
-    {'totalSupply_OUTPUT_0': 53495213276709}
+    54362452575909
 
 
 
@@ -59,7 +49,7 @@ contract.totalSupply_OUTPUT_0
 
 
 
-    53495213276709
+    54362452575909
 
 
 
@@ -71,7 +61,7 @@ contract.token0()
 
 
 
-    {'token0_OUTPUT_0': '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48'}
+    '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48'
 
 
 
@@ -83,6 +73,30 @@ contract.token1()
 
 
 
-    {'token1_OUTPUT_0': '0xdAC17F958D2ee523a2206206994597C13D831ec7'}
+    '0xdAC17F958D2ee523a2206206994597C13D831ec7'
 
+
+
+
+```python
+contract.symbol()
+```
+
+
+
+
+    'DMM-LP USDC-USDT'
+
+
+
+
+```python
+# Multiple outputs returned as a dictionary
+contract.getReserves()
+```
+
+
+
+
+    {'_reserve0': 54317737309760, '_reserve1': 54412737982824}
 

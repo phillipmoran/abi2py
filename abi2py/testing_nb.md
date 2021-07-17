@@ -2,7 +2,7 @@
 
 ```python
 from web3 import Web3
-from DMM_POOL_ABI import DMM_POOL_ABI
+from abi_output.DMM_POOL_ABI import DMM_POOL_ABI
 ```
 
 
@@ -21,7 +21,7 @@ contract.totalSupply()
 
 
 
-    {'totalSupply_OUTPUT_0': 53495213276709}
+    54362452575909
 
 
 
@@ -33,7 +33,7 @@ contract.totalSupply_OUTPUT_0
 
 
 
-    53495213276709
+    54362452575909
 
 
 
@@ -45,7 +45,7 @@ contract.token0()
 
 
 
-    {'token0_OUTPUT_0': '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48'}
+    '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48'
 
 
 
@@ -57,6 +57,36 @@ contract.token1()
 
 
 
-    {'token1_OUTPUT_0': '0xdAC17F958D2ee523a2206206994597C13D831ec7'}
+    '0xdAC17F958D2ee523a2206206994597C13D831ec7'
 
 
+
+
+```python
+contract.symbol()
+```
+
+
+
+
+    'DMM-LP USDC-USDT'
+
+
+
+
+```python
+# Multiple outputs returned as a dictionary
+contract.getReserves()
+```
+
+
+
+
+    {'_reserve0': 54317737309760, '_reserve1': 54412737982824}
+
+
+
+
+```python
+
+```

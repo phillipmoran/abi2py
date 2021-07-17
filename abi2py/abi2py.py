@@ -244,5 +244,13 @@ class ABI2py:
 
 
 if __name__ == "__main__":
-    file = "DMM_POOL_ABI.json"
-    abi = ABI2py(file)
+    import os
+
+    # file = "DMM_POOL_ABI.json"
+    # abi = ABI2py(file)
+    abi_files = os.getcwd() + "/abi_folder"
+    output_folder = os.getcwd() + "/abi_output"
+    files = os.listdir(abi_files)
+    for file in files:
+        abi_path = abi_files + "/" + file
+        ABI2py(abi_path, output_path=output_folder + "/")
