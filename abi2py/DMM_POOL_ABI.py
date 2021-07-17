@@ -16,13 +16,10 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.MINIMUM_LIQUIDITY().call()
-        output_list = []
-        output_list.append(output)
-        output=output_list
-        output_dict={}
-        self.MINIMUM_LIQUIDITY_OUTPUT_0 = output[0]
-        output_dict["MINIMUM_LIQUIDITY_OUTPUT_0"] = output[0]
-        return output_dict
+        output_items={}
+        self.MINIMUM_LIQUIDITY_OUTPUT_0 = output
+        output_items = output
+        return output_items
 
 
     def PERMIT_TYPEHASH(self):
@@ -36,13 +33,10 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.PERMIT_TYPEHASH().call()
-        output_list = []
-        output_list.append(output)
-        output=output_list
-        output_dict={}
-        self.PERMIT_TYPEHASH_OUTPUT_0 = output[0]
-        output_dict["PERMIT_TYPEHASH_OUTPUT_0"] = output[0]
-        return output_dict
+        output_items={}
+        self.PERMIT_TYPEHASH_OUTPUT_0 = output
+        output_items = output
+        return output_items
 
 
     def allowance(self, owner, spender):
@@ -56,13 +50,10 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.allowance(owner, spender, ).call()
-        output_list = []
-        output_list.append(output)
-        output=output_list
-        output_dict={}
-        self.allowance_OUTPUT_0 = output[0]
-        output_dict["allowance_OUTPUT_0"] = output[0]
-        return output_dict
+        output_items={}
+        self.allowance_OUTPUT_0 = output
+        output_items = output
+        return output_items
 
 
     def ampBps(self):
@@ -76,13 +67,10 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.ampBps().call()
-        output_list = []
-        output_list.append(output)
-        output=output_list
-        output_dict={}
-        self.ampBps_OUTPUT_0 = output[0]
-        output_dict["ampBps_OUTPUT_0"] = output[0]
-        return output_dict
+        output_items={}
+        self.ampBps_OUTPUT_0 = output
+        output_items = output
+        return output_items
 
 
     def approve(self, spender, amount):
@@ -96,13 +84,10 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.approve(spender, amount, ).call()
-        output_list = []
-        output_list.append(output)
-        output=output_list
-        output_dict={}
-        self.approve_OUTPUT_0 = output[0]
-        output_dict["approve_OUTPUT_0"] = output[0]
-        return output_dict
+        output_items={}
+        self.approve_OUTPUT_0 = output
+        output_items = output
+        return output_items
 
 
     def balanceOf(self, account):
@@ -115,13 +100,10 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.balanceOf(account, ).call()
-        output_list = []
-        output_list.append(output)
-        output=output_list
-        output_dict={}
-        self.balanceOf_OUTPUT_0 = output[0]
-        output_dict["balanceOf_OUTPUT_0"] = output[0]
-        return output_dict
+        output_items={}
+        self.balanceOf_OUTPUT_0 = output
+        output_items = output
+        return output_items
 
 
     def burn(self, to):
@@ -135,12 +117,12 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.burn(to, ).call()
-        output_dict={}
+        output_items={}
         self.amount0 = output[0]
-        output_dict["amount0"] = output[0]
+        output_items["amount0"] = output[0]
         self.amount1 = output[1]
-        output_dict["amount1"] = output[1]
-        return output_dict
+        output_items["amount1"] = output[1]
+        return output_items
 
 
     def decimals(self):
@@ -154,13 +136,10 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.decimals().call()
-        output_list = []
-        output_list.append(output)
-        output=output_list
-        output_dict={}
-        self.decimals_OUTPUT_0 = output[0]
-        output_dict["decimals_OUTPUT_0"] = output[0]
-        return output_dict
+        output_items={}
+        self.decimals_OUTPUT_0 = output
+        output_items = output
+        return output_items
 
 
     def decreaseAllowance(self, spender, subtractedValue):
@@ -174,13 +153,10 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.decreaseAllowance(spender, subtractedValue, ).call()
-        output_list = []
-        output_list.append(output)
-        output=output_list
-        output_dict={}
-        self.decreaseAllowance_OUTPUT_0 = output[0]
-        output_dict["decreaseAllowance_OUTPUT_0"] = output[0]
-        return output_dict
+        output_items={}
+        self.decreaseAllowance_OUTPUT_0 = output
+        output_items = output
+        return output_items
 
 
     def domainSeparator(self):
@@ -194,13 +170,10 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.domainSeparator().call()
-        output_list = []
-        output_list.append(output)
-        output=output_list
-        output_dict={}
-        self.domainSeparator_OUTPUT_0 = output[0]
-        output_dict["domainSeparator_OUTPUT_0"] = output[0]
-        return output_dict
+        output_items={}
+        self.domainSeparator_OUTPUT_0 = output
+        output_items = output
+        return output_items
 
 
     def factory(self):
@@ -214,13 +187,10 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.factory().call()
-        output_list = []
-        output_list.append(output)
-        output=output_list
-        output_dict={}
-        self.factory_OUTPUT_0 = output[0]
-        output_dict["factory_OUTPUT_0"] = output[0]
-        return output_dict
+        output_items={}
+        self.factory_OUTPUT_0 = output
+        output_items = output
+        return output_items
 
 
     def getReserves(self):
@@ -235,12 +205,12 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.getReserves().call()
-        output_dict={}
+        output_items={}
         self._reserve0 = output[0]
-        output_dict["_reserve0"] = output[0]
+        output_items["_reserve0"] = output[0]
         self._reserve1 = output[1]
-        output_dict["_reserve1"] = output[1]
-        return output_dict
+        output_items["_reserve1"] = output[1]
+        return output_items
 
 
     def getTradeInfo(self):
@@ -258,18 +228,18 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.getTradeInfo().call()
-        output_dict={}
+        output_items={}
         self._reserve0 = output[0]
-        output_dict["_reserve0"] = output[0]
+        output_items["_reserve0"] = output[0]
         self._reserve1 = output[1]
-        output_dict["_reserve1"] = output[1]
+        output_items["_reserve1"] = output[1]
         self._vReserve0 = output[2]
-        output_dict["_vReserve0"] = output[2]
+        output_items["_vReserve0"] = output[2]
         self._vReserve1 = output[3]
-        output_dict["_vReserve1"] = output[3]
+        output_items["_vReserve1"] = output[3]
         self.feeInPrecision = output[4]
-        output_dict["feeInPrecision"] = output[4]
-        return output_dict
+        output_items["feeInPrecision"] = output[4]
+        return output_items
 
 
     def getVolumeTrendData(self):
@@ -286,16 +256,16 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.getVolumeTrendData().call()
-        output_dict={}
+        output_items={}
         self._shortEMA = output[0]
-        output_dict["_shortEMA"] = output[0]
+        output_items["_shortEMA"] = output[0]
         self._longEMA = output[1]
-        output_dict["_longEMA"] = output[1]
+        output_items["_longEMA"] = output[1]
         self._currentBlockVolume = output[2]
-        output_dict["_currentBlockVolume"] = output[2]
+        output_items["_currentBlockVolume"] = output[2]
         self._lastTradeBlock = output[3]
-        output_dict["_lastTradeBlock"] = output[3]
-        return output_dict
+        output_items["_lastTradeBlock"] = output[3]
+        return output_items
 
 
     def increaseAllowance(self, spender, addedValue):
@@ -309,13 +279,10 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.increaseAllowance(spender, addedValue, ).call()
-        output_list = []
-        output_list.append(output)
-        output=output_list
-        output_dict={}
-        self.increaseAllowance_OUTPUT_0 = output[0]
-        output_dict["increaseAllowance_OUTPUT_0"] = output[0]
-        return output_dict
+        output_items={}
+        self.increaseAllowance_OUTPUT_0 = output
+        output_items = output
+        return output_items
 
 
     def initialize(self, _token0, _token1, _ampBps):
@@ -330,8 +297,8 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.initialize(_token0, _token1, _ampBps, ).call()
-        output_dict={}
-        return output_dict
+        output_items={}
+        return output_items
 
 
     def kLast(self):
@@ -345,13 +312,10 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.kLast().call()
-        output_list = []
-        output_list.append(output)
-        output=output_list
-        output_dict={}
-        self.kLast_OUTPUT_0 = output[0]
-        output_dict["kLast_OUTPUT_0"] = output[0]
-        return output_dict
+        output_items={}
+        self.kLast_OUTPUT_0 = output
+        output_items = output
+        return output_items
 
 
     def mint(self, to):
@@ -364,13 +328,10 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.mint(to, ).call()
-        output_list = []
-        output_list.append(output)
-        output=output_list
-        output_dict={}
-        self.liquidity = output[0]
-        output_dict["liquidity"] = output[0]
-        return output_dict
+        output_items={}
+        self.liquidity = output
+        output_items = output
+        return output_items
 
 
     def name(self):
@@ -384,13 +345,10 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.name().call()
-        output_list = []
-        output_list.append(output)
-        output=output_list
-        output_dict={}
-        self.name_OUTPUT_0 = output[0]
-        output_dict["name_OUTPUT_0"] = output[0]
-        return output_dict
+        output_items={}
+        self.name_OUTPUT_0 = output
+        output_items = output
+        return output_items
 
 
     def nonces(self, INPUT_0):
@@ -403,13 +361,10 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.nonces(INPUT_0, ).call()
-        output_list = []
-        output_list.append(output)
-        output=output_list
-        output_dict={}
-        self.nonces_OUTPUT_0 = output[0]
-        output_dict["nonces_OUTPUT_0"] = output[0]
-        return output_dict
+        output_items={}
+        self.nonces_OUTPUT_0 = output
+        output_items = output
+        return output_items
 
 
     def permit(self, owner, spender, value, deadline, v, r, s):
@@ -428,8 +383,8 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.permit(owner, spender, value, deadline, v, r, s, ).call()
-        output_dict={}
-        return output_dict
+        output_items={}
+        return output_items
 
 
     def skim(self, to):
@@ -442,8 +397,8 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.skim(to, ).call()
-        output_dict={}
-        return output_dict
+        output_items={}
+        return output_items
 
 
     def swap(self, amount0Out, amount1Out, to, callbackData):
@@ -459,8 +414,8 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.swap(amount0Out, amount1Out, to, callbackData, ).call()
-        output_dict={}
-        return output_dict
+        output_items={}
+        return output_items
 
 
     def symbol(self):
@@ -474,13 +429,10 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.symbol().call()
-        output_list = []
-        output_list.append(output)
-        output=output_list
-        output_dict={}
-        self.symbol_OUTPUT_0 = output[0]
-        output_dict["symbol_OUTPUT_0"] = output[0]
-        return output_dict
+        output_items={}
+        self.symbol_OUTPUT_0 = output
+        output_items = output
+        return output_items
 
 
     def sync(self):
@@ -494,8 +446,8 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.sync().call()
-        output_dict={}
-        return output_dict
+        output_items={}
+        return output_items
 
 
     def token0(self):
@@ -509,13 +461,10 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.token0().call()
-        output_list = []
-        output_list.append(output)
-        output=output_list
-        output_dict={}
-        self.token0_OUTPUT_0 = output[0]
-        output_dict["token0_OUTPUT_0"] = output[0]
-        return output_dict
+        output_items={}
+        self.token0_OUTPUT_0 = output
+        output_items = output
+        return output_items
 
 
     def token1(self):
@@ -529,13 +478,10 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.token1().call()
-        output_list = []
-        output_list.append(output)
-        output=output_list
-        output_dict={}
-        self.token1_OUTPUT_0 = output[0]
-        output_dict["token1_OUTPUT_0"] = output[0]
-        return output_dict
+        output_items={}
+        self.token1_OUTPUT_0 = output
+        output_items = output
+        return output_items
 
 
     def totalSupply(self):
@@ -549,13 +495,10 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.totalSupply().call()
-        output_list = []
-        output_list.append(output)
-        output=output_list
-        output_dict={}
-        self.totalSupply_OUTPUT_0 = output[0]
-        output_dict["totalSupply_OUTPUT_0"] = output[0]
-        return output_dict
+        output_items={}
+        self.totalSupply_OUTPUT_0 = output
+        output_items = output
+        return output_items
 
 
     def transfer(self, recipient, amount):
@@ -569,13 +512,10 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.transfer(recipient, amount, ).call()
-        output_list = []
-        output_list.append(output)
-        output=output_list
-        output_dict={}
-        self.transfer_OUTPUT_0 = output[0]
-        output_dict["transfer_OUTPUT_0"] = output[0]
-        return output_dict
+        output_items={}
+        self.transfer_OUTPUT_0 = output
+        output_items = output
+        return output_items
 
 
     def transferFrom(self, sender, recipient, amount):
@@ -590,11 +530,8 @@ class DMM_POOL_ABI:
 
         """
         output = self.contract.functions.transferFrom(sender, recipient, amount, ).call()
-        output_list = []
-        output_list.append(output)
-        output=output_list
-        output_dict={}
-        self.transferFrom_OUTPUT_0 = output[0]
-        output_dict["transferFrom_OUTPUT_0"] = output[0]
-        return output_dict
+        output_items={}
+        self.transferFrom_OUTPUT_0 = output
+        output_items = output
+        return output_items
 

@@ -126,7 +126,9 @@ class ABI2py:
                 name_counter += 1
             else:
                 name_list.append(name)
-        # if outputs is one item then it will only return a single output, not a list, there needs to be logic to handle that output, -- turn it into a list, instead of one single item
+        # deciding against returning a dict if it is one item
+        """
+        # if outputs is one item then it will only return a single output, not a list, there needs to be logic to handle that output
         if len(outputs) == 1:
             body = body + "\n"
             body = (
@@ -138,39 +140,53 @@ class ABI2py:
                 + self.indent * 2
                 + "output=output_list"
             )
+        """
         # make the output into a dictionary that is returned
-        body = body + "\n" + self.indent * 2 + "output_dict={}"
+        body = body + "\n" + self.indent * 2 + "output_items={}"
         output_counter = 0
         name_list_counter = 0
         if name_list == []:  # if name_list is empty, then skip
             pass
         else:
-            for output in outputs:
+            # if there is just one output, then just return that output, instead of a dict
+            if len(outputs) == 1:
                 body = body + "\n"
-                # add in the variable as self and to a dict that is returned
                 body = (
                     body
                     + self.indent * 2
                     + "self."
                     + name_list[name_list_counter]
-                    + " = output["
-                    + str(output_counter)
-                    + "]"
+                    + " = output"
                 )
                 body = body + "\n"
-                body = (
-                    body
-                    + self.indent * 2
-                    + 'output_dict["'
-                    + name_list[name_list_counter]
-                    + '"] = output['
-                    + str(output_counter)
-                    + "]"
-                )
-                output_counter += 1
-                name_list_counter += 1
+                body = body + self.indent * 2 + "output_items = output"
+            else:
+                for output in outputs:
+                    body = body + "\n"
+                    # add in the variable as self and to a dict that is returned
+                    body = (
+                        body
+                        + self.indent * 2
+                        + "self."
+                        + name_list[name_list_counter]
+                        + " = output["
+                        + str(output_counter)
+                        + "]"
+                    )
+                    body = body + "\n"
+                    body = (
+                        body
+                        + self.indent * 2
+                        + 'output_items["'
+                        + name_list[name_list_counter]
+                        + '"] = output['
+                        + str(output_counter)
+                        + "]"
+                    )
+                    output_counter += 1
+                    name_list_counter += 1
         body = body + "\n"
-        body = body + self.indent * 2 + "return output_dict"
+        body = body + self.indent * 2 + "return output_items"
         body = body + "\n"
         return body
 
