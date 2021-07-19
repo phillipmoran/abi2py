@@ -13,6 +13,16 @@
  - Outputs are returned both to a self attribute of the class instance and as a separate dictionary (if there is more than one output) or simply returning the output (if only one output)
 
 ## How to
+###
+Pop your ABI json files in the abi_folder.
+Run in cmd prompt
+```
+> python abi2py.py
+```
+The python objects of the ABI json's will be output to the abi_output folder.
+You can also give a different path for input ABI files and output directory. Just check out abi2py.py.
+
+### Using the created scripts
  Give web3 api provider, and contract address
 
 
